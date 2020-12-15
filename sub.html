@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="ko-kr">
+<head>
+	<meta charset="UTF-8">
+	<title>Sub</title>
+	<script src="http://code.jquery.com/jquery-3.5.1.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+	<style>
+		*{
+			margin:0px;
+			padding: 0px;
+			box-sizing: border-box;
+			font-family: 'Noto Sans KR', sans-serif;
+		}
+		.header{
+			background-color: #FBFAF9;
+			margin: 0 auto;
+			width: 100%;
+			height: 150px;
+			text-align:center;
+		}
+
+		.header img{
+			width:120px;
+			margin-top:20px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		.menu{
+			text-align: center;
+			padding-bottom: 10px;
+		}
+
+		.menu{
+			font-size:12px;
+			text-align: center;
+			border-top: 1px solid #D0D0D0;
+			border-bottom: 1px solid #D0D0D0;
+		}
+
+		
+		.menu a:hover{
+			color:black;
+		}
+		.menu a{
+			display: inline-block;
+			text-decoration: none;
+			color:#6A6A6A;
+			font-size:12px;
+			padding-top:12px;
+			margin-bottom: 6px;
+			margin-right:50px;
+			margin-left: 50px;
+			font-weight: 700;
+		}
+		.image-area img{
+			width: 420px;
+			float:left;
+			margin-left: 260px;
+			margin-top: 160px;
+		}
+		.info-area {
+			float: right;
+			width: 500px;
+			margin-right: 260px;
+			margin-top: 100px;
+
+		}
+		.summary-desc{
+			float: right;
+		}
+		.heading h3{
+			margin-top: 24px;
+			margin-bottom: 20px;
+			font-size: 16px;
+			font-weight: 700;
+
+		}
+		.product-detaildesign h1{
+			font-weight: 400;
+			font-size: 12px;
+			color: #555555;
+			margin-bottom: 20px;
+
+		}
+		.product-detaildesign h2{
+			font-weight: 400;
+			font-size: 12px;
+			color: #F94141;
+			margin-bottom: 20px;
+		}
+		.product-detaildesign h3{
+			font-size: 12px;
+			color: #555555;
+			font-weight: 400;
+			margin-bottom: 32px;
+
+		}
+		.add-option{
+			position: relative;
+			padding: 0 0 0 12px;
+			color: #757575;
+			line-height: 38px;
+			background: #fafafa;
+
+		}
+		.option{
+			padding: 4px 0 4px;
+			border: 1px solid #e7e7e7;
+			height: 400px;
+			vertical-align: top;
+		}
+		.option img{
+			margin-left: 20px;
+			margin-top: 20px;
+			margin-right: 50px;
+		}
+		.add-option img{
+			margin-top: 5px;
+
+		}
+		
+		.element{
+			position: relative;
+			padding: 0 0 0 12px;
+			color: #757575;
+			line-height: 38px;
+			background: #fafafa;
+			border-radius: 20px;
+			margin-top: 70px;
+		}
+		.element h3{
+			font-size: 12px;
+			color: #646464;
+		}
+		.element h2{
+			font-size: 12px;
+			color: #646464;
+		}
+		.element td {
+			padding: 5px 0;
+			line-height: 24px;
+			vertical-align: middle;
+			word-wrap: break-word;
+			word-break: break-all;
+			text-align: right;
+			position: relative;
+		}
+		.up img{
+			width: 20px;
+			
+		}
+		.down img{
+			width: 20px;
+			
+		}
+		#totalPrice{
+			font-size: 20px;
+			padding: 25px 0 10px;
+			vertical-align: middle;
+			text-align: right;
+			padding-bottom: 50px;
+			color:#C58876;
+		}
+		.action-button #btnBuy{
+			border: 1px solid #e7e7e7;
+			margin-top: 10px;
+			margin-left: 40px;
+			margin-right: 40px;
+			width: 170px;
+		 	height: 57px;
+
+		}
+		.action-button a{
+			font-size: 16px;
+			color: #646464;
+			text-decoration: none;
+			text-align: center;
+			
+
+		}
+		 .action-button{
+		 	margin-top: 20px;
+		 	width:700px;
+		 }
+		 .button{
+		 	background-color: #FFFFFF;
+		 	width: 160px;
+		 	height: 40px;
+		 	margin-right: 6px;
+		 	border: solid 1px #CCCCCC
+		 }
+		 .button {
+		 	-webkit-transition-duration: 0.4s;
+		 	transition-duration: 0.4s;
+		 }
+		 .button:hover {
+		 	background: #E2E2E2; 
+		 	color: white;
+		 }
+		 .button2{
+		 	background-color: #C58876;
+		 	width: 160px;
+		 	height: 40px;
+		 	
+		 	border: solid 1px #585858
+		 }
+		 .button2 {
+		 	-webkit-transition-duration: 0.4s;
+		 	transition-duration: 0.4s;
+		 }
+		 .button2:hover {
+		 	background: #C48370; 
+		 	color: white;
+		 }
+		 #prd-Detail{
+		 	padding: 20px 0;
+		 }
+		 ul{
+		 	display: block;
+		 	list-style-type: disc;
+		 }
+		 #menu2 li{
+			float: left;
+			margin-right: 50px;
+			padding-left: 5px;
+			padding-right: 5px;
+			list-style: none;
+			font-size: 12px;
+			line-height: 40px; 
+		}
+		#menu2 li:hover{
+			background-color: #E2E2E2;
+			color:#393939;
+		}
+		#menu2 li a:hover{
+			color:#393939;
+		}
+
+		#menu2 {
+			margin-left: 220px;
+			border-bottom: solid 1px #DBDBDB;
+			margin-top: 200px;
+			width: 1100px;
+			float: right;
+			float: left;			
+		}
+		#menu2 .selected a {
+			border-top: solid 3px #818181;
+		}
+
+
+
+		#menu2 li a {
+			text-decoration: none;
+			display: block;
+			text-decoration: none;
+			text-align: left;
+			letter-spacing: 1px;
+			color: #A1A1A1;
+			text-transform: uppercase;
+			font-weight: 300;
+			-webkit-transition: 0.2s ease-in-out;
+			-moz-transition: 0.2s ease-in-out;
+			-o-transition: 0.2s ease-in-out;
+			transition: 0.2s ease-in-out;
+		}
+		 .cont-detail{
+		 	display: block;
+		 	text-align: center;
+		 	padding-top: 70px;
+		 }
+		 .cont-detail img{
+		 	margin-top: 20px;
+		 }
+		 carousel-auto{
+		 	display: grid;
+		 	place-items:center;
+		 	text-align: center;
+		 }
+		 .slider-item{
+		 	border: solid 1px black;
+		 }
+
+		 
+
+		 .slider{
+		 	max-width: 1100px;
+		 	border: solid 0.5px #C6C6C6;
+		 	padding-top: 50px;
+		 	padding-bottom: 20px;
+		 	border-radius: 5px;
+		 	display: flex;
+		 	margin-top: 400px;
+		 	float: right;
+		 	margin-right:200px;
+		 }
+
+		 .slider .card{
+		 	background: #fff;
+		 	flex: 1;
+		 	text-align: center;
+		 	margin: 0 10px;
+		 }
+
+		
+		 .slider .card .img{
+		 	height: 220px;
+		 	width: 100%;
+		 }
+
+		 .slider .card .img img{
+		 	height: 200px;
+		 	width: 300px;
+		 	margin-right: auto;
+		 	margin-left: auto;
+		 	object-fit: cover;
+		 }
+
+		 .slider .card.content{
+		 	padding: 10px 20px;
+		 }
+		 .slider .title{
+		 	font-size: 16px;
+		 	font-weight: 600;
+		 }
+		 .slider .sub-title{
+		 	font-size: 8px;
+		 	font-weight: 400;
+		 	line-height: 20px;
+		 }
+		 .card .content .btn button{
+		 	background: #C58876;
+		 	color:#fff;
+		 	border: none;
+		 	font-size: 12px;
+		 	padding: 5 8px;
+		 	border-radius: 2px;
+		 	cursor: pointer;
+		 	transition: 0.2s;
+		 }
+		 .card .content.btn button:hover{
+		 	transform: scale(0.9);
+		 }
+
+		 	
+		 #accprdion-name h3{
+			font-size:20px;
+			color:#545454;
+			margin-top:100px;
+			margin-bottom: 50px;
+			text-align: center;
+
+
+		}
+		.accordion{
+			width: 1000px;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: -200px;
+		}
+		input[id*="answer"]{
+			display: none;
+
+		}
+		input[id*="answer"]+label{
+			display: block;
+			padding: 20px;
+			border: 1px solid #9E9E9E;
+			border-bottom: 0;
+			color:#fff;
+			font-size: 14px;
+			text-align: center;
+			font-weight: 700;
+			background:#CDCDCD;
+			cursor: pointer;
+			position: relative;
+		}
+		input[id*="answer"]+label em{
+			position: absolute;
+			top:50%;
+			resize: 10px;
+			width: 30px;
+			height: 30px;
+			margin-top: 15px;
+			display: inline-block;
+			
+		}
+		input[id*="answer"]+label +div{
+			max-height: 0;
+			transition: all.35s;
+			outline: hidden;
+			background: #FBFAF9;
+			font-size: 11px;
+		}
+		input[id*="answer"]+label +div p{
+			display: inline-box;
+			padding: 20px;
+		}
+		input[id*="answer"]:checked+label+div {
+			max-height: 100px;
+		}
+		input[id*="answer"]:checked+label em{
+			background-position: 0-30px;
+		}
+		 .footer{
+			height: 300px;
+			text-align: justify;
+			margin-left: 200px;
+			margin-right: 200px;
+			border-top:solid 1px #707070;
+		}
+		.footer p{
+			font-size:12px;
+			color:#AAAAAA;
+			padding-top: 30px;
+		}
+		.footer a{
+			font-size:12px;
+			color:#AAAAAA;
+			margin-top: 5px;
+			margin-bottom: 20px;
+			text-decoration: none;
+		}
+		.footer{
+			font-size: 12px;
+			margin-top: 60px;
+			margin-bottom: 20px;
+			text-decoration: none;
+			color:#AAAAAA;
+			padding-top: 60px;
+			display: block;
+		}
+		#insta{
+			font-size: 20px;
+			font-family: 'Roboto Slab', serif;
+
+		}
+
+
+	</style>
+</head>
+<body>
+	<div class="header">
+		<a href="file:///C:/Users/82104/OneDrive/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/main.html#"><img src="https://i.postimg.cc/j5t7n18N/image.png" alt="logo" width="120">
+		</a>
+	</div>
+		<div class="menu">
+			<a href="#">BEST</a>
+			<a href="#">NEW</a>
+			<a href="file:///C:/Users/82104/OneDrive/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/sub.html#none">TOK</a>
+			<a href="#">AIRPOD</a>
+			<a href="#">CHARACTER</a>
+			<a href="file:///C:/Users/82104/OneDrive/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/comunity.html">COMMUNITY</a>
+			<a href="#">LOGIN</a>
+		</div>
+	<div id= "product-detail">
+		<div class="detail-area">
+			<div class="image-area">
+				<img src="https://i.postimg.cc/nLcbHTv4/image.png" alt="tok">
+			</div>
+			<div class="info-area">
+				<div class="heading">
+					<h3>#스마트톡 굿데이 푸딩 크림275</h3>
+				 <div class="summary-desc">
+				 </div>
+				 <div class="product-detaildesign">
+					<h1>소비자가&nbsp;&nbsp;&nbsp;KRW 10,000</h1>
+					<h2>판매가&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; KRW 6,000</h2>
+					<h3>배송비&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;KRW 3,000 (KRW 30,000 이상 구매 시 무료)</h3>
+				</div>
+			</div>
+			<div class="add-option">
+				<a href="#none" onclick="">
+				<img src="https://i.postimg.cc/RF4dPh4C/image.png" width="280" alt="옵션 선택"></a>
+			</div>
+			<div class="option">
+				<div class="option-img">
+					<img src="https://i.postimg.cc/JhRMDmCk/image.png" alt="option-image" width="100px">
+					<select name="option">
+						<option value="case">- [필수] 옵션을 선택해 주세요 -</option>
+						<option value="case">#♡ 푸딩이 하트하트 톡</option>
+				</select>
+				<div class="option-img">
+					<img src="https://i.postimg.cc/qMYTLyV4/image.png" alt="option-image" width="100px">
+					<select name="option">
+						<option value="case">- [필수] 옵션을 선택해 주세요 -</option>
+						<option value="case">#♡ 푸딩이 노랑 케이스</option>
+				</select>
+				<div class="option-img">
+					<img src="https://i.postimg.cc/JhRMDmCk/image.png" alt="option-image" width="100px">
+					<select name="option">
+						<option value="case">- [필수] 옵션을 선택해 주세요 -</option>
+						<option value="case">#♡ 푸딩이 노랑 케이스</option>
+				</select>
+			</div>
+		</div>
+		<div class="element">
+			<h3>#스마트톡 굿데이 푸딩 크림</h3>
+			<td><span class="quantity" style="width:65px;">
+				<input type="text" id="option_box1_quantity" name="quantity_opt[]" class="quantity_opt eProductQuantityClass" value="1" product-no="2782">
+				<a href="#none" class="up" =data-target="option_box1_up">
+					<img src="https://i.postimg.cc/zB1y1HcW/image.png" id="option_box1_up" class="option_box_up" alt="수량증가"></a>
+					<a href="#none" class="down" data-target="option_box1_down">
+						<img src="https://i.postimg.cc/rssM68Mx/image.png" id="option_box1_down" class="option_box_down" alt="수량감소"></a>
+					</span>
+					
+			</td>
+		</div>
+		<div id="totalPrice" class="totalPrice">
+                 <span class="total">
+                	<strong><em>KRW 9,800</em></strong>
+                </span>
+            </div>
+
+		<div class="action-button">
+			<div class="ac-buy">
+					<input type="button" class="button" value="WISH LIST">
+					<input type="button" class="button" value="BASKET">
+					<input type="button" class="button2" value="BUY">
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+<div class="carousel-auto">
+	<div class="slider owl-carousel">
+		
+			<div class="card">
+				<div class="img"><img src="https://i.postimg.cc/jjK7qMCL/image.png" alt="1"></div>
+				<div class="content">
+					<div class="title">푸딩이 신나용</div>
+					<div class="sub-title">아이보리</div>
+					<div class="btn">
+						<button>Read more</button>
+					</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="img"><img src="https://i.postimg.cc/xqDdxdzc/2.jpg" alt="2"></div>
+				<div class="content">
+					<div class="title">해피 베어</div>
+					<div class="sub-title">라일락</div>
+					<div class="btn">
+						<button>Read more</button>
+					</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="img"><img src="https://i.postimg.cc/90NkC4pQ/1.jpg" alt="3"></div>
+				<div class="content">
+					<div class="title">후드 쿼카</div>
+					<div class="sub-title">그린</div>
+					<div class="btn">
+						<button>Read more</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			$(".slider").owlCarousel({
+				loop: true,
+				autoplay: true,
+				autoplayTimeout: 2000,
+				autoplayHoverPause: true,
+			});
+		</script>
+	</div>
+<div id="prd-Detail" class="base-tab">
+	<ul id="menu2">
+		<li class="selected"><a href="#"> Info </a></li>
+			<li><a href="#">DETAIL</a></li>
+			<li><a href="#">SHOP</a></li>
+			<li><a href="#">ITEM REVIEW</a></li>
+			<li><a href="#">Q & A</a></li>
+		</ul>
+	</div>
+		
+	<div class="cont-detail">
+        <img src="https://momocase.speedgabia.com/hard/cardstorage/in-storage-283.jpg" border="0">        </div>
+    </div>
+</div>
+<div class="accordion">
+		<div id="accprdion-name">
+			<h3> Q&A</h3>
+		</div>
+		<input type="checkbox" id="answer01">
+		<label for="answer01"> 배송정보<em></em></label>
+		<div>
+			<p>* 저희 정이마켓에서는 주문건을 확인 후, 자체제작을 하여 송장번호 입력일 기준으로 2~4일내 출고로 진행하고 있습니다<br>* 제주도 및 도서산간 지역은 기본배송료 외 추가 운임료가 발생할 수 있습니다. 추가 금액은 별도로 공지드리고있으니 이점 참고하여주세요</p>
+		</div>
+		<input type="checkbox" id="answer02">
+		<label for="answer02"> 교환 및 반품이 불가능한 경우<em></em></label>
+		<div>
+			<p>* 교환 및 반품의사를 통보하지 않은 경우<br>* 착용으로 인하여 제품에 오염이 발생하였거나 포장이 훼손되어 상품가치가 상실된 경우</p>
+		</div>
+		<input type="checkbox" id="answer03">
+		<label for="answer03"> 상품결제정보<em></em></label>
+		<div>
+			<p>* 주문시 입력한 입금자명과 실제입금자의 성명이 반드시 일치하여야 하며, 주문자명과 입금자명이 다르거나 입금금액이 다를경우 발송이 지연되니, 문의게시판이나 카카오톡 플친에 연락주세요.<br>* 3일 이내로 입금을 하셔야 하며 입금되지 않은 주문은 자동취소 됩니다.
+			</p>
+		</div>
+		<input type="checkbox" id="answer04">
+		<label for="answer04"> 서비스문의<em></em></label>
+		<div>
+			<p>상담시간 월-금 AM10:00 - PM5:00(카카오톡 플친:JEONG_EE) 휴일과 상담시간 외의 문의는 게시판을 이용해주세요</p>
+		</div>
+	</div>
+<div class="footer">
+		 <a href="#" id="insta">Instagram</a><br>
+    	 <a href="#">About</a>
+    	 <a href="#">Guide</a>
+    	 <a href="#">Agreement</a>
+    	 <a href="#"> Privacy</a>
+    	 <p>회사 주식회사 저니코믹스 상호명 정이마켓  대표 김민정  주소 경기도 시흥시 산기대학로 한국산업기술대학교<br>사업자등록번호 123-345-45665 [사업자정보확인]  통신판매업번호 34354-354554<br>개인정보관리책임자  김민정 alswjd3752@naver.com Copyright  주식회사 져니코믹스 all right</p>
+    	</div>
+
+
+
+
+
+
+	
+</body>
+</html>

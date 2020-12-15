@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ko-kr">
+<head>
+	<meta charset="UTF-8">
+	<title>community</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+
+
+	<style>
+		*{
+			margin:0;
+			padding:0;
+			box-sizing: border-box;
+			font-family: 'Noto Sans KR', sans-serif;
+		}
+		.header{
+			background-color: #FBFAF9;
+			margin: 0 auto;
+			width: 100%;
+			height: 150px;
+			text-align:center;
+		}
+
+		.header img{
+			width:120px;
+			margin-top:20px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		.menu{
+			text-align: center;
+			padding-bottom: 10px;
+		}
+
+		.menu{
+			font-size:12px;
+			text-align: center;
+			border-top: 1px solid #D0D0D0;
+			border-bottom: 1px solid #D0D0D0;
+		}
+
+		
+		.menu a:hover{
+			color:black;
+		}
+		.menu a{
+			display: inline-block;
+			text-decoration: none;
+			color:#6A6A6A;
+			font-size:12px;
+			padding-top:12px;
+			margin-bottom: 6px;
+			margin-right:50px;
+			margin-left: 50px;
+			font-weight: 700;
+		}
+		#contact-info-name h3{
+			font-size:20px;
+			color:#545454;
+			margin-top:100px;
+			margin-bottom:-200px;
+			text-align: center;
+
+		}
+		.body2{
+			
+			min-height: 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		
+
+		.contact-info{
+			display: flex;
+			width: 100%;
+			max-width: 1000px;
+			align-items: center;
+			justify-content: center;
+			padding:0 20;
+		}
+
+		.card{
+			background: #F9F9F9;
+			padding: 0 20px;
+			margin: 0 10px;
+			width: calc(33% - 20px);
+			height: 200px;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			color:#474747;
+			cursor: pointer;
+		}
+
+		.card-icon{
+			font-size: 28px;
+			background: #C58876;
+			width: 60px;
+			height: 60px;
+			text-align: center;
+			line-height: 60px;
+			border-radius: 50%;
+			transition: 0.3s linear;
+		}
+
+		.card:hover .card-icon{
+			background: none;
+			color:#C58876;
+			transform: scale(1.6);
+		}
+		.card p{
+			margin-top: 20px;
+			font-weight: 300;
+			letter-spacing: 2px;
+			max-height: 0;
+			opacity: 0;
+			transition: 0.3s linear;
+		}
+		.card:hover p{
+			max-height: 40px;
+			opacity: 1;
+		}
+
+		@media screen (max-width: 800px){
+			.concact-info{
+				flex-direction: column;
+			}
+			.card{
+				width: 100%;
+				max-width: 300px;
+				margin:10px 0;
+			}
+		}
+		#info-name h3{
+			font-size:20px;
+			color:#545454;
+			margin-top:100px;
+			text-align: center;
+		}
+
+		.introduction{
+		 	max-width: 1100px;
+		 	border-bottom: solid 0.5px #C6C6C6;
+		 	padding-bottom: 20px;
+		 	border-radius: 5px;
+		 	display: flex;
+		 	margin-top: 100px;
+		 	margin-bottom: 300px;
+		 	margin-left: 260px;
+		 	padding-right: 200px;
+		
+		 }
+
+		 .introduction .character{
+		 	background: #fff;
+		 	text-align: center;
+		 	margin: 0 10px;
+		 }
+
+		
+		 .introduction .character .img{
+		 	height: 210px;
+		 	width: 200px;
+		 }
+
+		 .introduction .character .img img{
+		 	height: 100%;
+		 	width: 100%;
+		 	margin-left: 20px;
+		 }
+
+		 .introduction .character.content{
+		 	padding-right: 200px;
+		 }
+
+
+
+		 .introduction .title{
+		 	font-size: 16px;
+		 	font-weight: 600;
+		 	margin-right: 100px;
+		 	margin-bottom: 10px;
+
+		 }
+		 .introduction .sub-title{
+		 	font-size: 8px;
+		 	font-weight: 400;
+		 	line-height: 20px;
+		 	margin-right: 100px;
+		 	width: 250px;
+		 	text-align: justify;
+		 }
+		 .introduction .content .btn button{
+		 	background: #C58876;
+		 	color:#fff;
+		 	border: none;
+		 	font-size: 12px;
+		 	padding: 4px 8px;
+		 	margin-top: 30px;
+		 	margin-left: 80px;
+		 	border-radius: 2px;
+		 	cursor: pointer;
+		 	transition: 0.2s;
+		 }
+		
+		.footer{
+			height: 300px;
+			text-align: justify;
+			margin-left: 200px;
+			margin-right: 200px;
+			border-top:solid 1px #707070;
+		}
+		.footer p{
+			font-size:12px;
+			color:#AAAAAA;
+			padding-top: 30px;
+		}
+		.footer a{
+			font-size:12px;
+			color:#AAAAAA;
+			margin-top: 5px;
+			margin-bottom: 20px;
+			text-decoration: none;
+		}
+		.footer{
+			font-size: 12px;
+			margin-top: -30px;
+			margin-bottom: 10px;
+			text-decoration: none;
+			color:#AAAAAA;
+			padding-top: 60px;
+			display: block;
+		}
+		#insta{
+			font-size: 20px;
+			font-family: 'Roboto Slab', serif;
+
+		}
+
+
+	
+		
+	</style>
+</head>
+<body>
+	<div class="header">
+		<a href="file:///C:/Users/82104/OneDrive/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/main.html#"><img src="https://i.postimg.cc/j5t7n18N/image.png" alt="logo" width="120">
+		</a>
+	</div>
+		<div class="menu">
+			<a href="#">BEST</a>
+			<a href="#">NEW</a>
+			<a href="file:///C:/Users/82104/OneDrive/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/sub.html#none">TOK</a>
+			<a href="#">AIRPOD</a>
+			<a href="#">CHARACTER</a>
+			<a href="file:///C:/Users/82104/OneDrive/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/comunity.html">COMMUNITY</a>
+			<a href="#">LOGIN</a>
+		</div>
+		<div id="info-name">
+			<h3> FRIENDS</h3>
+		</div>
+		<div class="introduction">
+			<div class="character">
+				<div class="img"><img src="https://i.postimg.cc/BndWGwSv/image.png" alt="1"></div>
+				<div class="content">
+					<div class="title">PDDDING</div>
+					<div class="sub-title">뽀글한 털을 가진 푸들 푸딩이! 밖에 나갈땐 털을 가리기 위해 하늘색 두건을 쓴다. 원래 윤기나는 털의 소유자 였지만 파마를 잘못하는 바람에 뽀글해졌다는 사실...</div>
+					<div class="btn">
+						<button>Read more</button>
+					</div>
+				</div>
+			</div>
+			<div class="character">
+				<div class="img"><img src="https://i.postimg.cc/rpSH2VZh/image.png" alt="2"></div>
+				<div class="content">
+					<div class="title">OSUN</div>
+					<div class="sub-title">리본을 단 작은 오리 오순이는 홍시의 단짝친구로, 홍시가 실수할 때마다 곁에서 도와주는 아주 착한 오리! 뒤뚱뒤뚱 걷지만 언젠가는 하늘로 날아오르는게 꿈이다</div>
+					<div class="btn">
+						<button>Read more</button>
+					</div>
+				</div>
+			</div>
+			<div class="character">
+				<div class="img"><img src="https://i.postimg.cc/rF3Zd0vn/image.png" alt="3"></div>
+				<div class="content">
+					<div class="title">HONGSI</div>
+					<div class="sub-title">흰 털에 대비되는 빨간 볼을 가진 친구! 항상 볼이 빨개 부끄럼을 탄다고 오해할 수 있지만, 누구보다 자신감 넘치는 에너자이저! 오순이와 아주 친한 친구입니다.</div>
+					<div class="btn">
+						<button>Read more</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="contact-info-name">
+			<h3> CONTACT</h3>
+		</div>
+	<div class="body2">
+		<div class="contact-info">
+			<div class="card">
+				<i class="card-icon far fa-envelope"></i>
+				<p>email@domain.com</p>
+			</div>
+
+			<div class="card">
+				<i class="card-icon fas fa-phone"></i>
+				<p>+01045555666</p>
+			</div>
+
+			<div class="card">
+				<i class="card-icon fas fa-map-marker-alt"></i>
+				<p>산기대학로235 한국산업기술대</p>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		 <a href="#" id="insta">Instagram</a><br>
+    	 <a href="#">About</a>
+    	 <a href="#">Guide</a>
+    	 <a href="#">Agreement</a>
+    	 <a href="#"> Privacy</a>
+    	 <p>회사 주식회사 저니코믹스 상호명 정이마켓  대표 김민정  주소 경기도 시흥시 산기대학로 한국산업기술대학교<br>사업자등록번호 123-345-45665 [사업자정보확인]  통신판매업번호 34354-354554<br>개인정보관리책임자  김민정 alswjd3752@naver.com Copyright  주식회사 져니코믹스 all right</p>
+    	</div>
+    </div>
+
+
+	
+    </div>
+</body>
+</html>
